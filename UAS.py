@@ -81,8 +81,8 @@ ac = list(map(list, zip(tahunbe, produksi2)))
 ase = sorted(ac, key=itemgetter(1), reverse=True)
 ajee = ase[:tah]
 lst_1_new, lst_2_new = zip(*ajee)
-
-cmap_name = 'tab20'
+# DIUBAH DARI 20 JADI 10 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+cmap_name = 'tab10'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(ajee)]
 fig, ax = plt.subplots()
