@@ -13,7 +13,7 @@ import statistics
 st.set_page_config(layout="wide")  # this needs to be the first Streamlit command called
 
 #--------------- HEADER ---------------
-image = Image.open('3.png')
+image = Image.open('header.png')
 st.image(image)
 
 #--------------- SIDEBAR ---------------
