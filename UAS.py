@@ -131,6 +131,7 @@ st.pyplot(fig)
 
 ######### 1.d. #########
 left_col, mind_col, right_col = st.columns(3)
+
 left_col.subheader("Negara Dengan Produksi Minyak Tertinggi")
 left_col.text("Nama Negara: Saudi Arabia")
 left_col.text("Kode Negara: SAU")
@@ -151,7 +152,7 @@ ot = pd.read_csv('produksi_minyak_mentah.csv')
 abssvn = ot[ot.kode_negara == 'SVN']
 mind_col.dataframe(abssvn)
 
-right_col.subheader("Negara Dengan Produksi Minyak Nol")
+right_col.subheader("Negara Dengan Produksi Minyak Sama Dengan Nol")
 right_col.text("Nama Negara: Belgium")
 right_col.text("Kode Negara: BEL")
 right_col.text("Region: Europe")
