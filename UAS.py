@@ -128,7 +128,7 @@ ax.bar(ajeee2, assuiook, color=colors)
 ax.set_xlabel("Negara", fontsize=10)
 ax.set_ylabel("Jumlah Produksi", fontsize=10)
 st.pyplot(fig)
-axis=0
+
 
 ######### 1.d. #########
 left_col, mind_col, right_col = st.columns(3)
