@@ -30,7 +30,7 @@ data = json.load(a)
 for element in data['cantik']:
     country.append(element["name"])
     
-######### GRAFIK 1.a. #########
+######### 1.a. #########
 st.sidebar.caption('Produksi Minyak Mentah Per Tahun')
 list_country = st.sidebar.selectbox("Pilih Negara", country)
 with open('kode_negara_lengkap.json', 'r') as ko:
@@ -40,9 +40,9 @@ with open('kode_negara_lengkap.json', 'r') as ko:
             sing = element['alpha-3']
             break
             
-######### GRAFIK 1.b. #########
+######### 1.b. #########
 st.sidebar.caption('Produksi Minyak Mentah Terbesar')
-tah = st.sidebar.number_input("Jumlah negara terbesar", min_value=1, max_value=None, value=3)
+tah = st.sidebar.number_input("Banyak negara", min_value=1, max_value=None, value=3)
 tah2 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1, max_value=None, value=1971)
 
 ## For Grafik 1.a ##
@@ -93,7 +93,7 @@ st.pyplot(fig)
 
 ######### Grafik 1.c. #########
 st.sidebar.caption('Produksi Kumulatif Terbesar')
-tah3 = st.sidebar.number_input("Pada tahun: *1971-2015", min_value=1, max_value=None, value=1978)
+tah3 = st.sidebar.number_input("Pilih tahun *1971-2015", min_value=1, max_value=None, value=1978)
 st.subheader("Produksi Kumulatif Terbesar")
 abb = ot[ot.tahun == tah3]
 st.dataframe(abb)
