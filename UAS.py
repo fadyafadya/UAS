@@ -12,25 +12,25 @@ import statistics
 
 st.set_page_config(layout="wide")  # this needs to be the first Streamlit command called
 
+#--------------- HEADER ---------------
 image = Image.open('3.png')
 st.image(image)
-############### title ###############)
 
-############### sidebar ###############
+#--------------- TITLE ---------------
 
-
-st.sidebar.title("Fadya Zalfa Rahmanita\n12220152")
-
+#--------------- SIDEBAR ---------------
+st.sidebar.caption("Fadya Zalfa Rahmanita\n12220152")
 
 ## User inputs on the control panel #########
-st.sidebar.subheader("Pengaturan Konfigurasi Grafik")
+st.sidebar.title("Pengaturan Konfigurasi Grafik")
 singkatan_country = []
 country = []
 a = open('kode_negara_lengkap.json', 'r')
 data = json.load(a)
 for element in data['cantik']:
     country.append(element["name"])
-######### Grafik 1 #########
+    
+######### GRAFIK 1 #########
 st.sidebar.caption('Pengaturan Grafik 1')
 list_country = st.sidebar.selectbox("Pilih Negara", country)
 with open('kode_negara_lengkap.json', 'r') as ko:
@@ -39,18 +39,19 @@ with open('kode_negara_lengkap.json', 'r') as ko:
         if element['name'] == list_country:
             sing = element['alpha-3']
             break
-######### Grafik 2 #########
+            
+######### GRAFIK 2 #########
 st.sidebar.caption('Pengaturan Grafik 2')
 tah = st.sidebar.number_input("Jumlah negara", min_value=1, max_value=None, value=3)
 tah2 = st.sidebar.number_input("Pada tahun: *1971-2015", min_value=1, max_value=None, value=1971)
-############### For Grafik 1 ###############
+
+## For Grafik 1 ##
 st.subheader("Grafik 1")
 ot = pd.read_csv('produksi_minyak_mentah.csv')
 ab = ot[ot.kode_negara == sing]
 st.dataframe(ab)
 tahunn = list(ab['tahun'].unique())
 produksi = list(ab['produksi'])
-
 cmap_name = 'tab20'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(tahunn)]
@@ -60,7 +61,7 @@ ax.set_xlabel("Tahun", fontsize=12)
 ax.set_ylabel("Jumlah Produksi", fontsize=12)
 st.pyplot(fig)
 
-############### For Grafik 2 ###############
+## For Grafik 2 ##
 st.subheader("Grafik 2")
 ap = ot[ot.tahun == tah2]
 st.dataframe(ap)
@@ -88,7 +89,8 @@ ax.bar(lst_1_new, lst_2_new, color=colors)
 ax.set_xlabel("Negara", fontsize=12)
 ax.set_ylabel("Jumlah Produksi", fontsize=12)
 st.pyplot(fig)
-############### For Grafik 3 ###############
+
+######### For Grafik 3 #########
 st.sidebar.caption('Pengaturan Grafik 3')
 tah3 = st.sidebar.number_input("Pada tahun: *1971-2015", min_value=1, max_value=None, value=1978)
 st.subheader("Grafik 3")
@@ -125,7 +127,8 @@ ax.bar(ajeee2, assuiook, color=colors)
 ax.set_xlabel("Negara", fontsize=12)
 ax.set_ylabel("Jumlah Produksi", fontsize=12)
 st.pyplot(fig)
-############### For 4 ###############
+
+######### 2 #########
 left_col, mind_col, right_col = st.columns(3)
 left_col.subheader("Negara Dengan Produksi Minyak Tertinggi")
 left_col.text("Nama Negara: Saudi Arabia")
