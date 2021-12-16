@@ -21,7 +21,7 @@ st.sidebar.caption("Fadya Zalfa Rahmanita")
 st.sidebar.caption("12220152")
 st.sidebar.caption("UAS IF2112 2021/2022")
 
-## User inputs on the control panel #########
+## User inputs on the control panel ##
 st.sidebar.title("SETTINGS")
 singkatan_country = []
 country = []
