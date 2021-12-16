@@ -47,6 +47,7 @@ tah2 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1, max_value
 
 ## For Grafik 1.a ##
 st.subheader("Produksi Minyak Mentah Per Tahun")
+st.caption("*if it says empty, we dont have the data")
 ot = pd.read_csv('produksi_minyak_mentah.csv')
 ab = ot[ot.kode_negara == sing]
 st.dataframe(ab)
