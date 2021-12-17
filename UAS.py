@@ -132,7 +132,7 @@ st.pyplot(fig)
 
 ######### 1.d. #########
 st.sidebar.caption('Data Produksi Negara Tertinggi, Terendah, dan Nol')
-tahh4 = st.sidebar.number_input("Pilih tahun *1971-2015", min_value=1971, max_value=2015)
+tahh4 = st.sidebar.number_input("Pilih tahun *1971-2015", min_value=1971, max_value=2015, value=1971)
 aabb = ot[ot.tahun == tahh4]
 atahunn3 = list(aabb['kode_negara'].unique())
 aproduksi3 = list(aabb['produksi'])
