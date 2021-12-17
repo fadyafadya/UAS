@@ -42,8 +42,8 @@ with open('kode_negara_lengkap.json', 'r') as ko:
             
 ######### 1.b. #########
 st.sidebar.caption('Produksi Minyak Mentah Terbesar')
-tah = st.sidebar.number_input("Banyak negara", min_value=1, max_value=None, keys='1b1')
-tah2 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1971, max_value=2015, value=1971, keys='1b2')
+tah = st.sidebar.number_input("Banyak negara", min_value=1, max_value=None, key='1b1')
+tah2 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1971, max_value=2015, value=1971, key='1b2')
 
 ## For Grafik 1.a ##
 st.subheader("Produksi Minyak Mentah Per Tahun")
@@ -93,7 +93,7 @@ st.pyplot(fig)
 
 ######### Grafik 1.c. #########
 st.sidebar.caption('Produksi Kumulatif Terbesar')
-tah3 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1971, max_value=2015, value=1971, keys='1c')
+tah3 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1971, max_value=2015, value=1971, key='1c')
 st.subheader("Produksi Kumulatif Terbesar")
 abb = ot[ot.tahun == tah3]
 st.dataframe(abb)
@@ -132,7 +132,7 @@ st.pyplot(fig)
 
 ######### 1.d. #########
 st.sidebar.caption('Data Produksi Negara Tertinggi, Terendah, dan Nol')
-tahh4 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1971, max_value=2015, value=1971, keys='1d')
+tahh4 = st.sidebar.number_input("Pilih tahun *1971--2015", min_value=1971, max_value=2015, value=1971, key='1d')
 aabb = ot[ot.tahun == tahh4]
 atahunn3 = list(aabb['kode_negara'].unique())
 aproduksi3 = list(aabb['produksi'])
